@@ -1,0 +1,13 @@
+apiVersion: skaffold/v1
+kind: Config
+build:
+  artifacts:
+    - image: demoprojectacr.azurecr.io/demos/users-service
+      docker:
+        dockerfile: Dockerfile
+  local: {}
+
+deploy:
+  kubectl:
+    manifests:
+      - deploy.yaml
